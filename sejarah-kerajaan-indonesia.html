@@ -1,0 +1,1528 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sejarah Kerajaan Indonesia</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8C97A;
+    --gold-dark: #8B6914;
+    --crimson: #8B1A1A;
+    --deep-brown: #1A0A00;
+    --parchment: #F5E6C8;
+    --parchment-dark: #E8D4A0;
+    --ink: #2C1810;
+    --jade: #2E7D5B;
+    --jade-light: #4CAF80;
+    --islamic-blue: #1B3A6B;
+    --islamic-teal: #0D6E6E;
+    --cream: #FDF6E3;
+    --shadow: rgba(0,0,0,0.5);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Crimson Pro', serif;
+    background: var(--deep-brown);
+    color: var(--parchment);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* === LANDING PAGE === */
+  #landing {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(ellipse at center, #2C1000 0%, #0D0500 60%, #000 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  #landing::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+      repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(201,168,76,0.03) 40px, rgba(201,168,76,0.03) 41px),
+      repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(201,168,76,0.03) 40px, rgba(201,168,76,0.03) 41px);
+    pointer-events: none;
+  }
+
+  .mandala-bg {
+    position: absolute;
+    width: 700px; height: 700px;
+    border-radius: 50%;
+    border: 1px solid rgba(201,168,76,0.08);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    animation: rotate 60s linear infinite;
+  }
+  .mandala-bg:nth-child(2) { width: 500px; height: 500px; animation-direction: reverse; animation-duration: 40s; }
+  .mandala-bg:nth-child(3) { width: 300px; height: 300px; animation-duration: 25s; }
+
+  @keyframes rotate { to { transform: translate(-50%, -50%) rotate(360deg); } }
+
+  .landing-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .ornament-top {
+    color: var(--gold);
+    font-size: 2rem;
+    letter-spacing: 1rem;
+    opacity: 0.6;
+    margin-bottom: 1rem;
+    animation: fadeIn 2s ease forwards;
+  }
+
+  .landing-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(2rem, 5vw, 4rem);
+    color: var(--gold);
+    text-shadow: 0 0 40px rgba(201,168,76,0.5), 0 2px 4px rgba(0,0,0,0.8);
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+    animation: fadeIn 2s ease 0.3s both;
+  }
+
+  .landing-subtitle {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(1rem, 2.5vw, 1.8rem);
+    color: var(--gold-light);
+    opacity: 0.8;
+    margin-bottom: 1.5rem;
+    animation: fadeIn 2s ease 0.6s both;
+  }
+
+  .landing-desc {
+    font-size: 1.2rem;
+    color: var(--parchment-dark);
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    font-style: italic;
+    line-height: 1.7;
+    animation: fadeIn 2s ease 0.9s both;
+  }
+
+  .divider-gold {
+    width: 200px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 1.5rem auto;
+    animation: fadeIn 2s ease 1s both;
+  }
+
+  /* === NAV CARDS === */
+  .nav-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    max-width: 1100px;
+    width: 100%;
+    padding: 0 1.5rem;
+    animation: slideUp 1s ease 1.2s both;
+  }
+
+  .nav-card {
+    background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+    border: 1px solid rgba(201,168,76,0.25);
+    border-radius: 4px;
+    padding: 2rem;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .nav-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, transparent 60%, rgba(201,168,76,0.05));
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+
+  .nav-card:hover { border-color: var(--gold); transform: translateY(-4px); box-shadow: 0 8px 30px rgba(201,168,76,0.2); }
+  .nav-card:hover::before { opacity: 1; }
+
+  .nav-card .card-icon { font-size: 3rem; margin-bottom: 1rem; }
+  .nav-card .card-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.1rem;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+  .nav-card .card-desc { font-size: 0.95rem; color: var(--parchment-dark); opacity: 0.8; line-height: 1.5; }
+
+  /* === PAGES === */
+  .page {
+    display: none;
+    min-height: 100vh;
+    animation: fadeIn 0.6s ease;
+  }
+  .page.active { display: block; }
+
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* === PAGE HEADER === */
+  .page-header {
+    padding: 4rem 2rem 3rem;
+    text-align: center;
+    position: relative;
+  }
+
+  .page-header.hindu {
+    background: linear-gradient(180deg, #1A0500 0%, #2C0D00 50%, #1A0500 100%);
+  }
+  .page-header.islamic {
+    background: linear-gradient(180deg, #030D1A 0%, #071A2E 50%, #030D1A 100%);
+  }
+  .page-header.masuk-islam {
+    background: linear-gradient(180deg, #050A0A 0%, #0D1F1F 50%, #050A0A 100%);
+  }
+
+  .page-header-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    color: var(--gold);
+    text-shadow: 0 0 30px rgba(201,168,76,0.4);
+    margin-bottom: 1rem;
+  }
+
+  .page-header-sub {
+    font-size: 1.1rem;
+    color: var(--parchment-dark);
+    opacity: 0.75;
+    font-style: italic;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  /* === BACK BUTTON === */
+  .back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.4rem;
+    background: transparent;
+    border: 1px solid rgba(201,168,76,0.4);
+    color: var(--gold);
+    font-family: 'Crimson Pro', serif;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin: 1.5rem 2rem;
+    border-radius: 2px;
+    letter-spacing: 0.05em;
+  }
+  .back-btn:hover { background: rgba(201,168,76,0.1); border-color: var(--gold); }
+
+  /* === SUB NAV (Kingdom List) === */
+  .sub-nav {
+    background: rgba(0,0,0,0.3);
+    border-top: 1px solid rgba(201,168,76,0.15);
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+    padding: 1.5rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    justify-content: center;
+  }
+
+  .sub-nav-btn {
+    padding: 0.5rem 1.2rem;
+    background: transparent;
+    border: 1px solid rgba(201,168,76,0.3);
+    color: var(--parchment-dark);
+    font-family: 'Crimson Pro', serif;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 2px;
+  }
+  .sub-nav-btn:hover, .sub-nav-btn.active { background: rgba(201,168,76,0.15); border-color: var(--gold); color: var(--gold); }
+
+  /* === CONTENT === */
+  .content-area {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+  }
+
+  .kingdom-panel {
+    display: none;
+    animation: fadeIn 0.5s ease;
+  }
+  .kingdom-panel.active { display: block; }
+
+  /* === KINGDOM CARD === */
+  .kingdom-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(1.4rem, 3vw, 2.2rem);
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+
+  .kingdom-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+  }
+
+  .meta-tag {
+    background: rgba(201,168,76,0.1);
+    border: 1px solid rgba(201,168,76,0.3);
+    color: var(--gold-light);
+    padding: 0.3rem 0.9rem;
+    font-size: 0.85rem;
+    border-radius: 2px;
+    font-style: italic;
+  }
+
+  .section-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.1rem;
+    color: var(--gold-light);
+    margin: 2rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+  }
+
+  .info-text {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: var(--parchment-dark);
+    margin-bottom: 1rem;
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .info-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(201,168,76,0.15);
+    border-radius: 3px;
+    padding: 1.2rem;
+  }
+
+  .info-card-label {
+    font-size: 0.8rem;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+    opacity: 0.8;
+  }
+
+  .info-card-value {
+    font-size: 1rem;
+    color: var(--parchment);
+    line-height: 1.5;
+  }
+
+  /* Tokoh list */
+  .tokoh-list { list-style: none; margin: 0; }
+  .tokoh-item {
+    padding: 1rem 1.2rem;
+    margin-bottom: 0.8rem;
+    background: rgba(255,255,255,0.03);
+    border-left: 3px solid var(--gold-dark);
+    border-radius: 0 3px 3px 0;
+  }
+  .tokoh-name {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1rem;
+    color: var(--gold-light);
+    margin-bottom: 0.3rem;
+  }
+  .tokoh-desc { font-size: 0.95rem; color: var(--parchment-dark); line-height: 1.6; }
+
+  /* Artefak */
+  .artefak-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+  .artefak-item {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(201,168,76,0.15);
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+  }
+  .artefak-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+  .artefak-name { font-size: 0.95rem; font-weight: 600; color: var(--gold-light); margin-bottom: 0.3rem; }
+  .artefak-desc { font-size: 0.85rem; color: var(--parchment-dark); opacity: 0.8; line-height: 1.4; }
+
+  /* === MASUK ISLAM SECTIONS === */
+  .masuk-section {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(13,110,110,0.3);
+    border-radius: 4px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+  .masuk-section-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.3rem;
+    color: var(--jade-light);
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+  }
+
+  /* Timeline */
+  .timeline {
+    position: relative;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--jade), var(--jade-light), var(--gold), var(--gold));
+  }
+  .timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+    padding-left: 1.5rem;
+  }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2.4rem;
+    top: 0.3rem;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--gold);
+    border: 2px solid var(--deep-brown);
+    box-shadow: 0 0 8px rgba(201,168,76,0.5);
+  }
+  .timeline-year {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 0.9rem;
+    color: var(--gold);
+    margin-bottom: 0.3rem;
+  }
+  .timeline-title { font-size: 1rem; font-weight: 600; color: var(--parchment); margin-bottom: 0.3rem; }
+  .timeline-text { font-size: 0.95rem; color: var(--parchment-dark); opacity: 0.85; line-height: 1.6; }
+
+  /* Teori box */
+  .teori-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.2rem;
+    margin: 1rem 0;
+  }
+  .teori-card {
+    background: linear-gradient(135deg, rgba(13,110,110,0.1), rgba(27,58,107,0.1));
+    border: 1px solid rgba(13,110,110,0.3);
+    border-radius: 4px;
+    padding: 1.5rem;
+  }
+  .teori-card-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1rem;
+    color: var(--jade-light);
+    margin-bottom: 0.8rem;
+  }
+  .teori-card-text { font-size: 0.95rem; color: var(--parchment-dark); line-height: 1.65; }
+
+  /* === PAGE FOOTER === */
+  .page-footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid rgba(201,168,76,0.1);
+    color: var(--parchment-dark);
+    opacity: 0.5;
+    font-size: 0.9rem;
+    font-style: italic;
+  }
+
+  /* === RESPONSIVE === */
+  @media (max-width: 600px) {
+    .nav-section { grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .nav-card { padding: 1.2rem; }
+    .nav-card .card-icon { font-size: 2rem; }
+    .sub-nav { gap: 0.5rem; }
+    .sub-nav-btn { font-size: 0.8rem; padding: 0.4rem 0.8rem; }
+    .info-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================================ -->
+<!--  LANDING PAGE  -->
+<!-- ============================================================ -->
+<div id="landing" class="page active">
+  <div class="mandala-bg"></div>
+  <div class="mandala-bg"></div>
+  <div class="mandala-bg"></div>
+
+  <div class="landing-content">
+    <div class="ornament-top">✦ ✦ ✦</div>
+    <h1 class="landing-title">Sejarah<br>Kerajaan Indonesia</h1>
+    <h2 class="landing-subtitle">Nusantara dari Masa ke Masa</h2>
+    <div class="divider-gold"></div>
+    <p class="landing-desc">Perjalanan peradaban agung dari era Hindu-Buddha hingga tegaknya kerajaan-kerajaan Islam di Nusantara — lengkap dengan cara masuknya Islam, artefak bersejarah, dan tokoh-tokoh utamanya.</p>
+    <div class="divider-gold"></div>
+
+    <div class="nav-section">
+      <div class="nav-card" onclick="showPage('page-masuk-islam')">
+        <div class="card-icon">🕌</div>
+        <div class="card-title">Cara Masuk Islam</div>
+        <div class="card-desc">Teori-teori masuknya Islam ke Nusantara, jalur penyebaran, dan tokoh-tokoh penyebar Islam</div>
+      </div>
+      <div class="nav-card" onclick="showPage('page-hindu-buddha')">
+        <div class="card-icon">🛕</div>
+        <div class="card-title">Kerajaan Hindu-Buddha</div>
+        <div class="card-desc">Kutai, Tarumanegara, Sriwijaya, Mataram Kuno, Kediri, Singhasari, Majapahit & lainnya</div>
+      </div>
+      <div class="nav-card" onclick="showPage('page-islam')">
+        <div class="card-icon">☪️</div>
+        <div class="card-title">Kerajaan Islam</div>
+        <div class="card-desc">Samudera Pasai, Demak, Mataram Islam, Aceh, Gowa-Tallo, Ternate, Tidore & lainnya</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!--  PAGE: MASUK ISLAM  -->
+<!-- ============================================================ -->
+<div id="page-masuk-islam" class="page">
+  <button class="back-btn" onclick="showPage('landing')">← Kembali</button>
+  <div class="page-header masuk-islam">
+    <h1 class="page-header-title">🕌 Cara Masuknya Islam ke Nusantara</h1>
+    <p class="page-header-sub">Teori-teori, jalur penyebaran, dan tokoh-tokoh yang membawa cahaya Islam ke kepulauan Nusantara</p>
+  </div>
+  <div class="divider-gold"></div>
+
+  <div class="content-area">
+
+    <!-- TEORI MASUK ISLAM -->
+    <div class="masuk-section">
+      <div class="masuk-section-title">📚 Teori-Teori Masuknya Islam</div>
+      <p class="info-text">Para sejarawan mengemukakan beberapa teori mengenai proses masuknya Islam ke Nusantara. Masing-masing teori memiliki bukti dan pendukungnya sendiri.</p>
+
+      <div class="teori-grid">
+        <div class="teori-card">
+          <div class="teori-card-title">🇸🇦 Teori Arabia (Makkah)</div>
+          <div class="teori-card-text">Islam datang langsung dari Arab (Makkah/Madinah) pada abad ke-7 M. Dikemukakan oleh <strong>Crawfurd, Keijzer, Niemann,</strong> dan <strong>de Hollander</strong>. Didukung oleh batu nisan Fatimah binti Maimun (1082 M) bertulisan Arab dan kesamaan mazhab Syafi'i antara Nusantara dan Arab.</div>
+        </div>
+        <div class="teori-card">
+          <div class="teori-card-title">🇮🇳 Teori Gujarat (India)</div>
+          <div class="teori-card-text">Islam masuk melalui pedagang Gujarat (India) pada abad ke-13 M. Dikemukakan oleh <strong>Snouck Hurgronje</strong> dan <strong>W.F. Stutterheim</strong>. Buktinya adalah batu nisan Sultan Malik al-Saleh (1297 M) yang mirip batu nisan Gujarat, serta hubungan dagang yang erat.</div>
+        </div>
+        <div class="teori-card">
+          <div class="teori-card-title">🇮🇷 Teori Persia</div>
+          <div class="teori-card-text">Islam dibawa oleh orang-orang Persia (Iran). Dikemukakan oleh <strong>P.A. Hoesein Djajadiningrat</strong>. Buktinya adalah kesamaan budaya seperti peringatan <em>Asyura/Tabuik</em> di Sumatera Barat dan kesamaan ajaran tasawuf antara Persia dan Nusantara.</div>
+        </div>
+        <div class="teori-card">
+          <div class="teori-card-title">🇨🇳 Teori Cina</div>
+          <div class="teori-card-text">Islam masuk melalui pedagang dan ulama Cina Muslim. Dikemukakan oleh <strong>Slamet Muljana</strong> dan <strong>Sumanto Al Qurtuby</strong>. Buktinya antara lain peran Cheng Ho (Laksamana Muslim Cina) dan komunitas Muslim Cina (Wali Songo sebagian berdarah Cina).</div>
+        </div>
+        <div class="teori-card">
+          <div class="teori-card-title">🇧🇩 Teori Benggali (Bangladesh)</div>
+          <div class="teori-card-text">Islam dibawa oleh pedagang dan ulama dari Benggali (Bangladesh/India Timur). Kesamaan tradisi, seni kaligrafi, dan teks Islam awal di Nusantara memiliki ciri khas Benggali. Pendapat ini didukung oleh <strong>S.Q. Fatimi</strong>.</div>
+        </div>
+        <div class="teori-card">
+          <div class="teori-card-title">🌊 Teori Nusantara Sendiri</div>
+          <div class="teori-card-text">Dikemukakan <strong>Buya Hamka</strong> — Islam disebarkan oleh orang Nusantara sendiri yang telah memeluk Islam lebih dahulu, kemudian kembali dan menyebarkan agama di kampung halamannya. Ini menekankan peran aktif masyarakat lokal.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JALUR MASUK -->
+    <div class="masuk-section">
+      <div class="masuk-section-title">🗺️ Jalur & Cara Penyebaran Islam</div>
+      <div class="teori-grid">
+        <div class="teori-card">
+          <div class="teori-card-title">💰 Jalur Perdagangan</div>
+          <div class="teori-card-text">Para pedagang Muslim dari Arab, India, dan Persia singgah di pelabuhan-pelabuhan Nusantara. Interaksi dagang menciptakan hubungan sosial yang akhirnya mengarah pada penyebaran Islam. Pelabuhan Pasai, Malaka, dan Tuban menjadi pintu masuk utama.</div>
+        </div>
+        <div class="teori-card">
+          <div class="teori-card-title">💍 Pernikahan</div>
+          <div class="teori-card-text">Pedagang Muslim menikahi putri-putri bangsawan lokal. Dari pernikahan ini lahir generasi Muslim yang berakar di Nusantara. Proses ini mempercepat islamisasi di kalangan bangsawan dan kerajaan.</div>
+        </div>
+        <div class="teori-card">
+          <div class="teori-card-title">🎭 Kesenian & Budaya</div>
+          <div class="teori-card-text">Para Wali Songo menggunakan seni wayang, gamelan, tembang, dan tradisi lokal sebagai media dakwah. Islam dikemas dalam bingkai budaya Jawa sehingga mudah diterima masyarakat.</div>
+        </div>
+        <div class="teori-card">
+          <div class="teori-card-title">🎓 Pendidikan (Pesantren)</div>
+          <div class="teori-card-text">Ulama mendirikan pesantren dan surau sebagai pusat pendidikan Islam. Murid-murid yang belajar kemudian menyebarkan ajaran Islam ke daerah masing-masing. Pesantren menjadi tulang punggung islamisasi Nusantara.</div>
+        </div>
+        <div class="teori-card">
+          <div class="teori-card-title">👑 Politik & Kekuasaan</div>
+          <div class="teori-card-text">Raja atau penguasa yang masuk Islam mengajak rakyatnya mengikuti agama yang sama. Ketika penguasa besar seperti Raja Kutai, Penguasa Demak, atau Sultan Aceh memeluk Islam, pengaruhnya sangat besar terhadap rakyat.</div>
+        </div>
+        <div class="teori-card">
+          <div class="teori-card-title">🌿 Tasawuf (Sufisme)</div>
+          <div class="teori-card-text">Ajaran tasawuf/sufisme lebih mudah diterima karena memiliki kesamaan dengan tradisi spiritual lokal (kepercayaan animisme-Hindu). Para sufi mengajarkan Islam dengan pendekatan yang toleran dan akomodatif terhadap budaya setempat.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TIMELINE MASUKNYA ISLAM -->
+    <div class="masuk-section">
+      <div class="masuk-section-title">📅 Kronologi Masuknya Islam ke Nusantara</div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-year">Abad 7 M</div>
+          <div class="timeline-title">Kontak Pertama</div>
+          <div class="timeline-text">Pedagang Arab Muslim mulai singgah di pelabuhan-pelabuhan Nusantara. Makam Mahligai di Barus, Tapanuli diyakini sebagai bukti awal kehadiran Muslim Arab di Nusantara (abad 7-8 M).</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">Abad 9-10 M</div>
+          <div class="timeline-title">Komunitas Muslim Terbentuk</div>
+          <div class="timeline-text">Komunitas-komunitas Muslim mulai terbentuk di pesisir Sumatera dan Jawa. Catatan sejarawan Arab seperti Ibn Khurdadhbih dan al-Mas'udi menyebut keberadaan pedagang Muslim di Nusantara.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">1082 M</div>
+          <div class="timeline-title">Batu Nisan Fatimah binti Maimun</div>
+          <div class="timeline-text">Ditemukan di Leran, Gresik — merupakan bukti fisik tertua keberadaan Muslim di Nusantara. Batu nisan ini bertuliskan huruf Arab dan menandai kehadiran komunitas Muslim yang mapan di Jawa Timur.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">1267 M</div>
+          <div class="timeline-title">Kerajaan Islam Pertama: Samudera Pasai</div>
+          <div class="timeline-text">Sultan Malik al-Saleh mendirikan Kerajaan Samudera Pasai di Aceh — kerajaan Islam pertama di Nusantara. Ini menandai fase baru: Islam bukan hanya agama pedagang, tetapi kini menjadi landasan kekuasaan politik.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">Abad 14-15 M</div>
+          <div class="timeline-title">Islamisasi Meluas</div>
+          <div class="timeline-text">Malaka berkembang sebagai pusat perdagangan dan penyebaran Islam. Wali Songo mulai aktif berdakwah di Jawa. Kerajaan-kerajaan pesisir Jawa satu per satu memeluk Islam.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">1478 M</div>
+          <div class="timeline-title">Runtuhnya Majapahit</div>
+          <div class="timeline-text">Keruntuhan Majapahit mempercepat islamisasi Jawa. Kerajaan Demak yang Islam tampil sebagai kekuatan baru, dan banyak bangsawan Majapahit yang beralih memeluk Islam.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">Abad 16-17 M</div>
+          <div class="timeline-title">Islam Menyebar ke Seluruh Nusantara</div>
+          <div class="timeline-text">Islam menyebar ke Sulawesi (Gowa-Tallo), Maluku (Ternate-Tidore), Kalimantan, dan Lombok. Hampir seluruh nusantara telah mengenal Islam, meski dengan intensitas yang berbeda-beda.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TOKOH PENYEBAR ISLAM -->
+    <div class="masuk-section">
+      <div class="masuk-section-title">👤 Tokoh-Tokoh Penyebar Islam di Nusantara</div>
+      <ul class="tokoh-list">
+        <li class="tokoh-item">
+          <div class="tokoh-name">Wali Songo (9 Wali)</div>
+          <div class="tokoh-desc">Sembilan ulama utama penyebar Islam di Jawa: Sunan Gresik (Maulana Malik Ibrahim), Sunan Ampel (Raden Rahmat), Sunan Bonang, Sunan Drajat, Sunan Kalijaga, Sunan Giri, Sunan Kudus, Sunan Muria, dan Sunan Gunung Jati. Mereka berdakwah melalui seni, budaya, dan pendekatan lokal yang arif.</div>
+        </li>
+        <li class="tokoh-item">
+          <div class="tokoh-name">Sultan Malik al-Saleh (Merah Silu)</div>
+          <div class="tokoh-desc">Raja pertama Kerajaan Samudera Pasai (1267–1297 M). Pelopor berdirinya kerajaan Islam pertama di Nusantara setelah memeluk Islam dan berganti nama.</div>
+        </li>
+        <li class="tokoh-item">
+          <div class="tokoh-name">Hamzah Fansuri</div>
+          <div class="tokoh-desc">Ulama dan penyair sufi besar dari Aceh (abad 16 M). Karya-karyanya dalam bahasa Melayu menjadi dasar sastra Islam Nusantara. Tokoh tasawuf penting yang memperkenalkan paham wahdatul wujud.</div>
+        </li>
+        <li class="tokoh-item">
+          <div class="tokoh-name">Syekh Nuruddin ar-Raniri</div>
+          <div class="tokoh-desc">Ulama besar Aceh abad 17 M, penulis Bustanus Salatin — ensiklopedia Islam pertama di Nusantara. Berperan penting dalam konsolidasi ajaran Islam ortodoks di Aceh.</div>
+        </li>
+        <li class="tokoh-item">
+          <div class="tokoh-name">Dato ri Bandang & Dato Sulaiman</div>
+          <div class="tokoh-desc">Ulama dari Minangkabau yang menyebarkan Islam di Sulawesi Selatan. Berhasil mengislamkan Raja Gowa dan Tallo pada 1605 M, yang kemudian menjadi tonggak islamisasi Sulawesi.</div>
+        </li>
+        <li class="tokoh-item">
+          <div class="tokoh-name">Laksamana Cheng Ho (Zheng He)</div>
+          <div class="tokoh-desc">Laksamana besar Muslim Cina yang melakukan 7 ekspedisi ke Nusantara (1405–1433 M). Misi diplomatiknya membawa pengaruh budaya Islam dan memperkuat hubungan antara komunitas Muslim Cina dan Nusantara.</div>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+  <div class="page-footer">✦ Sejarah Kerajaan Indonesia ✦</div>
+</div>
+
+<!-- ============================================================ -->
+<!--  PAGE: KERAJAAN HINDU-BUDDHA  -->
+<!-- ============================================================ -->
+<div id="page-hindu-buddha" class="page">
+  <button class="back-btn" onclick="showPage('landing')">← Kembali</button>
+  <div class="page-header hindu">
+    <h1 class="page-header-title">🛕 Kerajaan Hindu-Buddha</h1>
+    <p class="page-header-sub">Peradaban agung Nusantara yang dipengaruhi kebudayaan India — dari abad ke-4 hingga abad ke-15 Masehi</p>
+  </div>
+  <div class="divider-gold"></div>
+
+  <div class="sub-nav">
+    <button class="sub-nav-btn active" onclick="showKingdom('kutai', this)">Kutai</button>
+    <button class="sub-nav-btn" onclick="showKingdom('tarumanegara', this)">Tarumanegara</button>
+    <button class="sub-nav-btn" onclick="showKingdom('sriwijaya', this)">Sriwijaya</button>
+    <button class="sub-nav-btn" onclick="showKingdom('mataram-kuno', this)">Mataram Kuno</button>
+    <button class="sub-nav-btn" onclick="showKingdom('kediri', this)">Kediri</button>
+    <button class="sub-nav-btn" onclick="showKingdom('singhasari', this)">Singhasari</button>
+    <button class="sub-nav-btn" onclick="showKingdom('majapahit', this)">Majapahit</button>
+    <button class="sub-nav-btn" onclick="showKingdom('melayu', this)">Melayu</button>
+    <button class="sub-nav-btn" onclick="showKingdom('kalingga', this)">Kalingga</button>
+    <button class="sub-nav-btn" onclick="showKingdom('ho-ling', this)">Ho-Ling</button>
+  </div>
+
+  <div class="content-area">
+
+    <!-- KUTAI -->
+    <div id="kingdom-kutai" class="kingdom-panel active">
+      <h2 class="kingdom-title">⚜️ Kerajaan Kutai</h2>
+      <div class="kingdom-meta">
+        <span class="meta-tag">📅 Abad 4 M (~375 M)</span>
+        <span class="meta-tag">📍 Kalimantan Timur</span>
+        <span class="meta-tag">🛕 Hindu (Siwa)</span>
+        <span class="meta-tag">👑 Kerajaan Hindu tertua di Indonesia</span>
+      </div>
+      <p class="info-text">Kerajaan Kutai adalah kerajaan Hindu tertua di Indonesia yang berdiri sekitar abad ke-4 Masehi di tepi Sungai Mahakam, Kalimantan Timur. Kerajaan ini merupakan bukti masuknya pengaruh India ke Nusantara melalui jalur perdagangan laut. Agama Hindu khususnya aliran Siwa sangat dominan di kerajaan ini.</p>
+
+      <div class="section-title">📜 Prasasti & Artefak</div>
+      <div class="artefak-grid">
+        <div class="artefak-item">
+          <div class="artefak-icon">🪨</div>
+          <div class="artefak-name">Yupa (7 buah)</div>
+          <div class="artefak-desc">Tiang batu bertulisan huruf Pallawa & bahasa Sansekerta. Sumber sejarah utama Kutai, berisi silsilah raja dan upacara kurban.</div>
+        </div>
+        <div class="artefak-item">
+          <div class="artefak-icon">🔥</div>
+          <div class="artefak-name">Upacara Waprakeswara</div>
+          <div class="artefak-desc">Upacara kurban besar (Bahuswamika) yang disebut dalam Yupa — 20.000 sapi disedekahkan kepada Brahmana.</div>
+        </div>
+        <div class="artefak-item">
+          <div class="artefak-icon">🏺</div>
+          <div class="artefak-name">Arca Hindu</div>
+          <div class="artefak-desc">Berbagai arca bercorak Hindu-Siwa ditemukan di kawasan Kutai lama.</div>
+        </div>
+      </div>
+
+      <div class="section-title">👤 Tokoh-Tokoh Penting</div>
+      <ul class="tokoh-list">
+        <li class="tokoh-item">
+          <div class="tokoh-name">Kudungga</div>
+          <div class="tokoh-desc">Raja pertama Kutai — nama asli Nusantara (belum terpengaruh India). Kakeknya Mulawarman.</div>
+        </li>
+        <li class="tokoh-item">
+          <div class="tokoh-name">Aswawarman</div>
+          <div class="tokoh-desc">Putra Kudungga, raja kedua. Nama sudah bercorak India. Disebut "Ansuman" (seperti matahari) dan melakukan upacara Aswamedha (kurban kuda). Pendiri dinasti sesungguhnya (Vamsyakarta).</div>
+        </li>
+        <li class="tokoh-item">
+          <div class="tokoh-name">Mulawarman</div>
+          <div class="tokoh-desc">Raja terbesar Kutai, putra Aswawarman. Terkenal karena kemurahan hatinya menyedekahkan 20.000 ekor sapi kepada Brahmana. Sosoknya digambarkan mulia dalam 7 Yupa.</div>
+        </li>
+      </ul>
+
+      <div class="section-title">📖 Informasi Penting</div>
+      <div class="info-grid">
+        <div class="info-card"><div class="info-card-label">Sumber Sejarah</div><div class="info-card-value">7 buah Yupa (tiang batu) bertulisan Pallawa-Sansekerta</div></div>
+        <div class="info-card"><div class="info-card-label">Agama</div><div class="info-card-value">Hindu Siwa (Brahmana sebagai penasihat spiritual)</div></div>
+        <div class="info-card"><div class="info-card-label">Lokasi</div><div class="info-card-value">Muara Kaman, tepi Sungai Mahakam, Kaltim</div></div>
+        <div class="info-card"><div class="info-card-label">Kehancuran</div><div class="info-card-value">Abad ke-16, dikalahkan Kerajaan Islam Kutai Kartanegara</div></div>
+      </div>
+    </div>
+
+    <!-- TARUMANEGARA -->
+    <div id="kingdom-tarumanegara" class="kingdom-panel">
+      <h2 class="kingdom-title">⚜️ Kerajaan Tarumanegara</h2>
+      <div class="kingdom-meta">
+        <span class="meta-tag">📅 Abad 4-7 M (~358–669 M)</span>
+        <span class="meta-tag">📍 Jawa Barat</span>
+        <span class="meta-tag">🛕 Hindu (Wisnu)</span>
+        <span class="meta-tag">👑 Kerajaan Hindu tertua di Jawa</span>
+      </div>
+      <p class="info-text">Kerajaan Tarumanegara adalah kerajaan Hindu tertua dan terbesar di Pulau Jawa, berdiri di wilayah Jawa Barat. Kerajaan ini memiliki pengaruh yang luas di seluruh Jawa bagian barat dan dikenal melalui tujuh prasasti yang ditemukan di berbagai lokasi.</p>
+
+      <div class="section-title">📜 Prasasti & Artefak</div>
+      <div class="artefak-grid">
+        <div class="artefak-item">
+          <div class="artefak-icon">🪨</div>
+          <div class="artefak-name">Prasasti Ciaruteun</div>
+          <div class="artefak-desc">Berisi tapak kaki Raja Purnawarman + puisi pujian. Ditemukan di Bogor, tulisan Pallawa-Sansekerta.</div>
+        </div>
+        <div class="artefak-item">
+          <div class="artefak-icon">🪨</div>
+          <div class="artefak-name">Prasasti Kebon Kopi</div>
+          <div class="artefak-desc">Bergambar tapak kaki gajah Raja Purnawarman, diibaratkan seperti Airawata (gajah Dewa Indra).</div>
+        </div>
+        <div class="artefak-item">
+          <div class="artefak-icon">🪨</div>
+          <div class="artefak-name">Prasasti Tugu</div>
+          <div class="artefak-desc">Menceritakan pembangunan saluran air Gomati (6 km) oleh Purnawarman untuk rakyat. Bukti kepedulian sosial raja.</div>
+        </div>
+        <div class="artefak-item">
+          <div class="artefak-icon">🪨</div>
+          <div class="artefak-name">Prasasti Jambu, Cidanghiyang, Lebak, Pasir Awi</div>
+          <div class="artefak-desc">Empat prasasti lain yang ditemukan di Jawa Barat, menunjukkan luasnya wilayah kekuasaan Tarumanegara.</div>
+        </div>
+      </div>
+
+      <div class="section-title">👤 Tokoh-Tokoh Penting</div>
+      <ul class="tokoh-list">
+        <li class="tokoh-item">
+          <div class="tokoh-name">Jayasingawarman</div>
+          <div class="tokoh-desc">Pendiri Kerajaan Tarumanegara (358 M). Berasal dari India (Gujarat) dan merupakan pemimpin kelompok Hindu yang datang ke Jawa.</div>
+        </li>
+        <li class="tokoh-item">
+          <div class="tokoh-name">Purnawarman</div>
+          <div class="tokoh-desc">Raja terbesar Tarumanegara. Membangun saluran irigasi Candrabhaga dan Gomati, melakukan kurban 1000 ekor sapi, dan memperluas wilayah kekuasaan. Namanya tertulis dalam 7 prasasti.</div>
+        </li>
+        <li class="tokoh-item">
+          <div class="tokoh-name">Linggawarman</div>
+          <div class="tokoh-desc">Raja terakhir Tarumanegara. Putrinya, Dewi Manasih, menikah dengan Tarusbawa — pendiri Kerajaan Sunda — yang kemudian memisahkan diri dari Tarumanegara.</div>
+        </li>
+      </ul>
+      <div class="info-grid">
+        <div class="info-card"><div class="info-card-label">Ibu Kota</div><div class="info-card-value">Sundapura (sekitar Bekasi/Bogor)</div></div>
+        <div class="info-card"><div class="info-card-label">Agama</div><div class="info-card-value">Hindu Wisnu</div></div>
+        <div class="info-card"><div class="info-card-label">Kehancuran</div><div class="info-card-value">Abad 7 M, pecah menjadi Kerajaan Sunda dan Galuh</div></div>
+      </div>
+    </div>
+
+    <!-- SRIWIJAYA -->
+    <div id="kingdom-sriwijaya" class="kingdom-panel">
+      <h2 class="kingdom-title">⚜️ Kerajaan Sriwijaya</h2>
+      <div class="kingdom-meta">
+        <span class="meta-tag">📅 Abad 7-13 M (~671–1377 M)</span>
+        <span class="meta-tag">📍 Sumatera Selatan (Palembang)</span>
+        <span class="meta-tag">☸️ Buddha Mahayana</span>
+        <span class="meta-tag">👑 Kerajaan Maritim Terbesar Nusantara</span>
+      </div>
+      <p class="info-text">Sriwijaya adalah kerajaan maritim terbesar dan terkuat di Asia Tenggara selama berabad-abad. Menguasai jalur perdagangan Selat Malaka, menjadi pusat penyebaran agama Buddha, dan memiliki armada laut yang sangat kuat. Sriwijaya dikenal luas oleh pedagang Arab, India, dan Cina.</p>
+
+      <div class="section-title">📜 Prasasti & Artefak</div>
+      <div class="artefak-grid">
+        <div class="artefak-item">
+          <div class="artefak-icon">🪨</div>
+          <div class="artefak-name">Prasasti Kedukan Bukit (683 M)</div>
+          <div class="artefak-desc">Prasasti tertua Sriwijaya. Menceritakan ekspedisi militer raja dan berdirinya Sriwijaya. Bahasa Melayu Kuno + huruf Pallawa.</div>
+        </div>
+        <div class="artefak-item">
+          <div class="artefak-icon">🪨</div>
+          <div class="artefak-name">Prasasti Talang Tuo (684 M)</div>
+          <div class="artefak-desc">Menceritakan pembuatan taman Sri Ksetra oleh Raja Dapunta Hyang sebagai hadiah untuk rakyat dan makhluk hidup.</div>
+        </div>
+        <div class="artefak-item">
+          <div class="artefak-icon">🪨</div>
+          <div class="artefak-name">Prasasti Kota Kapur</div>
+          <div class="artefak-desc">Berisi sumpah kutukan terhadap mereka yang tidak setia kepada Sriwijaya. Ditemukan di Bangka.</div>
+        </div>
+        <div class="artefak-item">
+          <div class="artefak-icon">🧘</div>
+          <div class="artefak-name">Arca Buddha Emas</div>
+          <div class="artefak-desc">Berbagai arca Buddha bercorak Mahayana ditemukan di Sumatera, mencerminkan agama resmi Sriwijaya.</div>
+        </div>
+        <div class="artefak-item">
+          <div class="artefak-icon">🏛️</div>
+          <div class="artefak-name">Candi Muara Takus</div>
+          <div class="artefak-desc">Kompleks candi Buddha di Riau, salah satu peninggalan arsitektur Sriwijaya yang masih ada.</div>
+        </div>
+      </div>
+
+      <div class="section-title">👤 Tokoh-Tokoh Penting</div>
+      <ul class="tokoh-list">
+        <li class="tokoh-item">
+          <div class="tokoh-name">Dapunta Hyang Sri Jayanasa</div>
+          <div class="tokoh-desc">Pendiri Sriwijaya (abad 7 M). Melakukan ekspedisi besar dengan 20.000 tentara untuk memperluas wilayah. Disebutkan dalam Prasasti Kedukan Bukit.</div>
+        </li>
+        <li class="tokoh-item">
+          <div class="tokoh-name">Balaputradewa</div>
+          <div class="tokoh-desc">Raja terbesar Sriwijaya (abad 9 M). Memperluas kekuasaan hingga ke Semenanjung Melayu. Membangun hubungan diplomatik dengan India (Dinasti Pala). Dikenal karena membangun wihara di Nalanda, India.</div>
+        </li>
+        <li class="tokoh-item">
+          <div class="tokoh-name">Sri Cudamani Warmadewa</div>
+          <div class="tokoh-desc">Raja Sriwijaya abad 10 M yang berhubungan dengan Dinasti Chola India dan mendapat pengakuan dari Cina.</div>
+        </li>
+        <li class="tokoh-item">
+          <div class="tokoh-name">I Tsing (Yijing)</div>
+          <div class="tokoh-desc">Biksu Buddha Cina yang singgah di Sriwijaya (671 M) selama 6 bulan belajar Bahasa Sansekerta. Catatan perjalanannya menjadi sumber penting sejarah Sriwijaya.</div>
+        </li>
+      </ul>
+      <div class="info-grid">
+        <div class="info-card"><div class="info-card-label">Puncak Kejayaan</div><div class="info-card-value">Abad 7–9 M</div></div>
+        <div class="info-card"><div class="info-card-label">Wilayah</div><div class="info-card-value">Sumatera, Kalimantan Barat, Semenanjung Melayu, sebagian Thailand</div></div>
+        <div class="info-card"><div class="info-card-label">Faktor Kemajuan</div><div class="info-card-value">Perdagangan maritim, menguasai Selat Malaka & Selat Sunda</div></div>
+        <div class="info-card"><div class="info-card-label">Kehancuran</div><div class="info-card-value">Serangan Majapahit + Kerajaan Chola India, abad 13-14 M</div></div>
+      </div>
+    </div>
+
+    <!-- MATARAM KUNO -->
+    <div id="kingdom-mataram-kuno" class="kingdom-panel">
+      <h2 class="kingdom-title">⚜️ Kerajaan Mataram Kuno</h2>
+      <div class="kingdom-meta">
+        <span class="meta-tag">📅 Abad 8-10 M (~732–930 M)</span>
+        <span class="meta-tag">📍 Jawa Tengah</span>
+        <span class="meta-tag">🛕☸️ Hindu & Buddha</span>
+        <span class="meta-tag">👑 Pembangun Borobudur & Prambanan</span>
+      </div>
+      <p class="info-text">Kerajaan Mataram Kuno adalah kerajaan agraris besar di Jawa Tengah yang melahirkan dua monumen terbesar dunia: Candi Borobudur (Buddha) dan Candi Prambanan (Hindu). Kerajaan ini diperintah dua dinasti: Sanjaya (Hindu) dan Sailendra (Buddha).</p>
+
+      <div class="section-title">📜 Prasasti & Artefak</div>
+      <div class="artefak-grid">
+        <div class="artefak-item">
+          <div class="artefak-icon">🏛️</div>
+          <div class="artefak-name">Candi Borobudur</div>
+          <div class="artefak-desc">Candi Buddha terbesar di dunia, dibangun Dinasti Sailendra (~778–850 M). Warisan UNESCO, memiliki 2.672 relief dan 504 arca Buddha.</div>
+        </div>
+        <div class="artefak-item">
+          <div class="artefak-icon">🏛️</div>
+          <div class="artefak-name">Candi Prambanan</div>
+          <div class="artefak-desc">Kompleks candi Hindu terbesar di Indonesia, dibangun Raja Rakai Pikatan. Dipersembahkan untuk Trimurti: Brahma, Wisnu, Siwa.</div>
+        </div>
+        <div class="artefak-item">
+          <div class="artefak-icon">🪨</div>
+          <div class="artefak-name">Prasasti Canggal (732 M)</div>
+          <div class="artefak-desc">Prasasti tertua Mataram Kuno. Dibuat Raja Sanjaya, berisi pendirian lingga (simbol Siwa) di Bukit Stirangga.</div>
+        </div>
+        <div class="artefak-item">
+          <div class="artefak-icon">🪨</div>
+          <div class="artefak-name">Prasasti Kalasan (778 M)</div>
+          <div class="artefak-desc">Menceritakan pembangunan Candi Kalasan oleh Dinasti Sailendra untuk Dewi Tara (Buddha).</div>
+        </div>
+      </div>
+
+      <div class="section-title">👤 Tokoh-Tokoh Penting</div>
+      <ul class="tokoh-list">
+        <li class="tokoh-item">
+          <div class="tokoh-name">Sanjaya (Raja Sanjaya)</div>
+          <div class="tokoh-desc">Pendiri Dinasti Sanjaya dan Kerajaan Mataram Kuno (732 M). Penganut Hindu Siwa yang taat. Disebut dalam Prasasti Canggal.</div>
+        </li>
+        <li class="tokoh-item">
+          <div class="tokoh-name">Samaratungga</div>
+          <div class="tokoh-desc">Raja Sailendra yang memerintahkan pembangunan Candi Borobudur (~778-850 M). Puncak kejayaan Dinasti Sailendra.</div>
+        </li>
+        <li class="tokoh-item">
+          <div class="tokoh-name">Rakai Pikatan</div>
+          <div class="tokoh-desc">Raja dari Dinasti Sanjaya yang menikahi Pramodhawardhani (putri Samaratungga dari Sailendra). Memerintahkan pembangunan Candi Prambanan. Menyatukan dua dinasti Hindu-Buddha.</div>
+        </li>
+        <li class="tokoh-item">
+          <div class="tokoh-name">Dyah Balitung</div>
+          <div class="tokoh-desc">Raja Mataram Kuno paling banyak meninggalkan prasasti (abad 9 M). Memperluas wilayah kerajaan.</div>
+        </li>
+      </ul>
+      <div class="info-grid">
+        <div class="info-card"><div class="info-card-label">Ibu Kota</div><div class="info-card-value">Medang (sekitar Kedu/Prambanan)</div></div>
+        <div class="info-card"><div class="info-card-label">Perpindahan</div><div class="info-card-value">Pindah ke Jawa Timur (930 M) akibat letusan Gunung Merapi</div></div>
+        <div class="info-card"><div class="info-card-label">Warisan</div><div class="info-card-value">Borobudur, Prambanan, puluhan candi di Jawa Tengah</div></div>
+      </div>
+    </div>
+
+    <!-- KEDIRI -->
+    <div id="kingdom-kediri" class="kingdom-panel">
+      <h2 class="kingdom-title">⚜️ Kerajaan Kediri</h2>
+      <div class="kingdom-meta">
+        <span class="meta-tag">📅 1042–1222 M</span>
+        <span class="meta-tag">📍 Jawa Timur (Kediri)</span>
+        <span class="meta-tag">🛕 Hindu</span>
+        <span class="meta-tag">👑 Pusat Sastra Jawa Kuno</span>
+      </div>
+      <p class="info-text">Kerajaan Kediri lahir dari perpecahan Kerajaan Medang Kamulan antara Airlangga dan Wengker. Kediri dikenal sebagai pusat kesusastraan Jawa Kuno yang menghasilkan kakawin-kakawin agung. Periode Kediri menghasilkan karya sastra terbesar dalam sejarah Jawa.</p>
+
+      <div class="section-title">📜 Prasasti & Artefak</div>
+      <div class="artefak-grid">
+        <div class="artefak-item">
+          <div class="artefak-icon">📜</div>
+          <div class="artefak-name">Kakawin Bharatayudha</div>
+          <div class="artefak-desc">Karya Mpu Sedah & Mpu Panuluh (1157 M). Adaptasi Mahabharata versi Jawa — karya sastra terbesar masa Kediri.</div>
+        </div>
+        <div class="artefak-item">
+          <div class="artefak-icon">📜</div>
+          <div class="artefak-name">Kakawin Arjunawiwaha</div>
+          <div class="artefak-desc">Karya Mpu Kanwa masa Raja Airlangga (1035 M). Kisah Arjuna bertapa — salah satu kakawin terbesar Jawa.</div>
+        </div>
+        <div class="artefak-item">
+          <div class="artefak-icon">🪨</div>
+          <div class="artefak-name">Prasasti Sirah Keting (1104 M)</div>
+          <div class="artefak-desc">Prasasti tertua Kediri dari masa Raja Jayawarsa.</div>
+        </div>
+      </div>
+
+      <div class="section-title">👤 Tokoh-Tokoh Penting</div>
+      <ul class="tokoh-list">
+        <li class="tokoh-item">
+          <div class="tokoh-name">Airlangga</div>
+          <div class="tokoh-desc">Raja besar Medang yang membagi kerajaannya menjadi Kediri dan Jenggala (1042 M) untuk dua putranya. Tokoh legendaris yang menjadi cikal bakal Kediri. Digambarkan sebagai penjelmaan Dewa Wisnu.</div>
+        </li>
+        <li class="tokoh-item">
+          <div class="tokoh-name">Sri Bameswara</div>
+          <div class="tokoh-desc">Raja Kediri yang berkuasa sekitar 1116-1135 M. Meninggalkan beberapa prasasti penting.</div>
+        </li>
+        <li class="tokoh-item">
+          <div class="tokoh-name">Jayabaya</div>
+          <div class="tokoh-desc">Raja terbesar Kediri (1135-1159 M). Terkenal karena ramalannya (Jangka Jayabaya) dan karya sastranya. Masa pemerintahannya adalah puncak kejayaan Kediri.</div>
+        </li>
+        <li class="tokoh-item">
+          <div class="tokoh-name">Kertajaya (Dandang Gendis)</div>
+          <div class="tokoh-desc">Raja terakhir Kediri yang arogan dan mengklaim dirinya sebagai dewa. Dikalahkan Ken Arok (1222 M) dalam Pertempuran Ganter yang mengakhiri Kediri.</div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- SINGHASARI -->
+    <div id="kingdom-singhasari" class="kingdom-panel">
+      <h2 class="kingdom-title">⚜️ Kerajaan Singhasari</h2>
+      <div class="kingdom-meta">
+        <span class="meta-tag">📅 1222–1292 M</span>
+        <span class="meta-tag">📍 Jawa Timur (Malang)</span>
+        <span class="meta-tag">🛕 Hindu-Buddha (Tantrayana)</span>
+        <span class="meta-tag">👑 Pendahulu Majapahit</span>
+      </div>
+      <p class="info-text">Singhasari didirikan Ken Arok dari kalangan rakyat biasa yang naik takhta melalui intrik dan keberanian. Kerajaan ini dikenal karena kisah dramatis para rajanya dan Raja Kertanegara yang visioner, yang bermimpi menyatukan seluruh Nusantara.</p>
+
+      <div class="section-title">📜 Prasasti & Artefak</div>
+      <div class="artefak-grid">
+        <div class="artefak-item">
+          <div class="artefak-icon">🏛️</div>
+          <div class="artefak-name">Candi Singhasari</div>
+          <div class="artefak-desc">Candi peninggalan Singhasari di Malang, didirikan untuk menghormati Raja Kertanegara.</div>
+        </div>
+        <div class="artefak-item">
+          <div class="artefak-icon">🗿</div>
+          <div class="artefak-name">Arca Prajnaparamita</div>
+          <div class="artefak-desc">Arca dewi kebijaksanaan Buddha yang diduga merupakan perwujudan Ken Dedes — salah satu arca terindah Asia Tenggara.</div>
+        </div>
+        <div class="artefak-item">
+          <div class="artefak-icon">🏛️</div>
+          <div class="artefak-name">Candi Jago & Kidal</div>
+          <div class="artefak-desc">Peninggalan arsitektur Singhasari. Candi Jago (Jajaghu) dibangun untuk Raja Wisnuwardhana.</div>
+        </div>
+        <div class="artefak-item">
+          <div class="artefak-icon">🪨</div>
+          <div class="artefak-name">Prasasti Kudadu (1294 M)</div>
+          <div class="artefak-desc">Prasasti dari masa awal Majapahit yang menyebut peristiwa akhir Singhasari.</div>
+        </div>
+      </div>
+
+      <div class="section-title">👤 Tokoh-Tokoh Penting</div>
+      <ul class="tokoh-list">
+        <li class="tokoh-item">
+          <div class="tokoh-name">Ken Arok (Sri Ranggah Rajasa)</div>
+          <div class="tokoh-desc">Pendiri Singhasari (1222 M). Berasal dari rakyat biasa, naik takhta dengan membunuh Tunggul Ametung dan Kertajaya. Menikahi Ken Dedes. Tokoh penuh misteri yang kelak dibunuh anaknya sendiri, Anusapati.</div>
+        </li>
+        <li class="tokoh-item">
+          <div class="tokoh-name">Ken Dedes</div>
+          <div class="tokoh-desc">Permaisuri legendaris, disebut memiliki "pancaran cahaya" yang membuat siapapun yang menikahinya akan menjadi raja besar. Diwujudkan sebagai Arca Prajnaparamita.</div>
+        </li>
+        <li class="tokoh-item">
+          <div class="tokoh-name">Kertanegara</div>
+          <div class="tokoh-desc">Raja terbesar dan terakhir Singhasari (1268-1292 M). Visioner, bermimpi menyatukan Nusantara (Cakrawala Mandala Dwipantara). Mengirim Ekspedisi Pamalayu ke Sumatera, menolak tunduk kepada Mongol (Kubilai Khan). Dibunuh dalam pemberontakan Jayakatwang.</div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- MAJAPAHIT -->
+    <div id="kingdom-majapahit" class="kingdom-panel">
+      <h2 class="kingdom-title">⚜️ Kerajaan Majapahit</h2>
+      <div class="kingdom-meta">
+        <span class="meta-tag">📅 1293–1527 M</span>
+        <span class="meta-tag">📍 Jawa Timur (Trowulan, Mojokerto)</span>
+        <span class="meta-tag">🛕 Hindu-Buddha</span>
+        <span class="meta-tag">👑 Kerajaan Terbesar Nusantara</span>
+      </div>
+      <p class="info-text">Majapahit adalah kerajaan Hindu-Buddha terbesar dan terakhir di Nusantara. Pada puncak kejayaannya di bawah Raja Hayam Wuruk dan Mahapatih Gajah Mada, wilayah kekuasaannya mencakup hampir seluruh Nusantara, bahkan sebagian Asia Tenggara. Sumpah Palapa Gajah Mada menjadi salah satu momen terpenting dalam sejarah Indonesia.</p>
+
+      <div class="section-title">📜 Prasasti & Artefak</div>
+      <div class="artefak-grid">
+        <div class="artefak-item">
+          <div class="artefak-icon">📜</div>
+          <div class="artefak-name">Nagarakretagama (1365 M)</div>
+          <div class="artefak-desc">Karya Mpu Prapanca. Kitab puisi berisi pujian dan deskripsi kerajaan Majapahit — sumber terpenting sejarah Majapahit.</div>
+        </div>
+        <div class="artefak-item">
+          <div class="artefak-icon">📜</div>
+          <div class="artefak-name">Kitab Sutasoma</div>
+          <div class="artefak-desc">Karya Mpu Tantular. Berisi ajaran toleransi beragama. Asal mula semboyan "Bhinneka Tunggal Ika" yang kini menjadi semboyan Indonesia.</div>
+        </div>
+        <div class="artefak-item">
+          <div class="artefak-icon">🏛️</div>
+          <div class="artefak-name">Situs Trowulan</div>
+          <div class="artefak-desc">Reruntuhan ibu kota Majapahit di Trowulan, Mojokerto. Ditemukan berbagai struktur bangunan, kolam, dan artefak.</div>
+        </div>
+        <div class="artefak-item">
+          <div class="artefak-icon">🏛️</div>
+          <div class="artefak-name">Candi Penataran</div>
+          <div class="artefak-desc">Kompleks candi Hindu terbesar di Jawa Timur, dibangun dan dikembangkan sepanjang era Majapahit di Blitar.</div>
+        </div>
+        <div class="artefak-item">
+          <div class="artefak-icon">🗿</div>
+          <div class="artefak-name">Arca Hayam Wuruk</div>
+          <div class="artefak-desc">Arca perwujudan Raja Hayam Wuruk sebagai Wisnu, simbol dewa-raja dalam tradisi Majapahit.</div>
+        </div>
+        <div class="artefak-item">
+          <div class="artefak-icon">🪨</div>
+          <div class="artefak-name">Prasasti Kudadu & Balawi</div>
+          <div class="artefak-desc">Prasasti-prasasti awal Majapahit yang berisi sejarah pendirian dan kekuasaan kerajaan.</div>
+        </div>
+      </div>
+
+      <div class="section-title">👤 Tokoh-Tokoh Penting</div>
+      <ul class="tokoh-list">
+        <li class="tokoh-item">
+          <div class="tokoh-name">Raden Wijaya (Kertarajasa Jayawardhana)</div>
+          <div class="tokoh-desc">Pendiri Majapahit (1293 M). Menantu Kertanegara yang berhasil memanfaatkan pasukan Mongol untuk mengalahkan Jayakatwang, lalu mengusir Mongol. Mendirikan kerajaan di hutan Maja.</div>
+        </li>
+        <li class="tokoh-item">
+          <div class="tokoh-name">Hayam Wuruk (Rajasanagara)</div>
+          <div class="tokoh-desc">Raja terbesar Majapahit (1350-1389 M). Memerintah di puncak kejayaan bersama Gajah Mada. Wilayah Majapahit mencapai luasnya yang terbesar di bawah pemerintahannya.</div>
+        </li>
+        <li class="tokoh-item">
+          <div class="tokoh-name">Gajah Mada</div>
+          <div class="tokoh-desc">Mahapatih terbesar Majapahit. Mengucapkan Sumpah Palapa (1336 M): "tidak akan menikmati buah maja sebelum menyatukan Nusantara." Berhasil mempersatukan hampir seluruh Nusantara di bawah Majapahit.</div>
+        </li>
+        <li class="tokoh-item">
+          <div class="tokoh-name">Tribhuwana Tungga Dewi</div>
+          <div class="tokoh-desc">Ratu Majapahit (1328-1350 M), ibu Hayam Wuruk. Mengangkat Gajah Mada sebagai Mahapatih dan menyaksikan Sumpah Palapa.</div>
+        </li>
+        <li class="tokoh-item">
+          <div class="tokoh-name">Mpu Prapanca & Mpu Tantular</div>
+          <div class="tokoh-desc">Dua sastrawan besar Majapahit. Prapanca menulis Nagarakretagama, Tantular menulis Sutasoma (sumber "Bhinneka Tunggal Ika").</div>
+        </li>
+      </ul>
+      <div class="info-grid">
+        <div class="info-card"><div class="info-card-label">Wilayah Puncak</div><div class="info-card-value">Jawa, Sumatera, Kalimantan, Sulawesi, Maluku, Semenanjung Melayu, sebagian Filipina</div></div>
+        <div class="info-card"><div class="info-card-label">Puncak Kejayaan</div><div class="info-card-value">1350–1389 M (Hayam Wuruk + Gajah Mada)</div></div>
+        <div class="info-card"><div class="info-card-label">Kehancuran</div><div class="info-card-value">Perang Saudara Paregreg (1401-1406 M) + merebaknya Islam</div></div>
+      </div>
+    </div>
+
+    <!-- MELAYU -->
+    <div id="kingdom-melayu" class="kingdom-panel">
+      <h2 class="kingdom-title">⚜️ Kerajaan Melayu</h2>
+      <div class="kingdom-meta">
+        <span class="meta-tag">📅 Abad 7-14 M</span>
+        <span class="meta-tag">📍 Jambi, Sumatera</span>
+        <span class="meta-tag">☸️ Buddha Mahayana</span>
+        <span class="meta-tag">👑 Rival & Sekutu Sriwijaya</span>
+      </div>
+      <p class="info-text">Kerajaan Melayu berpusat di Jambi dan merupakan salah satu kerajaan tertua di Sumatera. Sempat ditaklukkan Sriwijaya, kemudian berdiri kembali dan pada akhirnya menyerap sisa-sisa Sriwijaya. Dikenal melalui catatan biksu Cina I Tsing yang singgah di sana.</p>
+      <div class="section-title">📜 Artefak & Sumber Sejarah</div>
+      <div class="artefak-grid">
+        <div class="artefak-item"><div class="artefak-icon">🪨</div><div class="artefak-name">Prasasti Sriwijaya di Jambi</div><div class="artefak-desc">Prasasti-prasasti yang ditemukan di kawasan Jambi terkait dengan Sriwijaya dan Melayu.</div></div>
+        <div class="artefak-item"><div class="artefak-icon">📖</div><div class="artefak-name">Catatan I Tsing</div><div class="artefak-desc">Biksu Cina menyebut Mo-lo-yu (Melayu) saat perjalanannya (671 M).</div></div>
+      </div>
+      <div class="section-title">👤 Tokoh Penting</div>
+      <ul class="tokoh-list">
+        <li class="tokoh-item"><div class="tokoh-name">Adityawarman</div><div class="tokoh-desc">Raja terbesar Melayu (1347-1375 M). Sebelumnya pejabat Majapahit, kemudian memimpin Melayu secara mandiri. Memeluk Buddha Tantrayana dan meninggalkan banyak prasasti di Sumatera Barat (Minangkabau).</div></li>
+      </ul>
+    </div>
+
+    <!-- KALINGGA -->
+    <div id="kingdom-kalingga" class="kingdom-panel">
+      <h2 class="kingdom-title">⚜️ Kerajaan Kalingga (Holing)</h2>
+      <div class="kingdom-meta">
+        <span class="meta-tag">📅 Abad 6-7 M</span>
+        <span class="meta-tag">📍 Jawa Tengah (pantai utara)</span>
+        <span class="meta-tag">🛕☸️ Hindu-Buddha</span>
+        <span class="meta-tag">👑 Ratu pertama di Nusantara</span>
+      </div>
+      <p class="info-text">Kalingga adalah kerajaan tertua di Jawa Tengah, berdiri di pantai utara Jawa. Kerajaan ini terkenal karena diperintah oleh seorang ratu, Shima, yang dikenal sangat adil dan keras dalam menegakkan hukum. Sumber sejarahnya terutama berasal dari catatan Dinasti Tang (Cina).</p>
+
+      <div class="section-title">📜 Sumber Sejarah</div>
+      <div class="artefak-grid">
+        <div class="artefak-item"><div class="artefak-icon">📖</div><div class="artefak-name">Catatan Dinasti Tang</div><div class="artefak-desc">Menyebut kerajaan Ho-ling/Kalingga di Jawa yang sering mengirim utusan ke Cina.</div></div>
+        <div class="artefak-item"><div class="artefak-icon">📖</div><div class="artefak-name">Catatan I Tsing</div><div class="artefak-desc">Menyebut Kalingga sebagai pusat pembelajaran Buddha di Jawa pada abad 7 M.</div></div>
+      </div>
+
+      <div class="section-title">👤 Tokoh Penting</div>
+      <ul class="tokoh-list">
+        <li class="tokoh-item"><div class="tokoh-name">Ratu Shima</div><div class="tokoh-desc">Ratu Kalingga yang terkenal (abad 7 M). Terkenal karena adil dan tegas: putranya sendiri dipotong tangannya karena menyentuh kantong emas yang sengaja diletakkan di jalan untuk menguji kejujuran rakyat. Simbol penegakan hukum tanpa pandang bulu.</div></li>
+        <li class="tokoh-item"><div class="tokoh-name">Jnanabhadra & Ratnabhanu</div><div class="tokoh-desc">Biksu Buddha yang aktif di Kalingga, disebut dalam catatan I Tsing sebagai ulama besar pada masanya.</div></li>
+      </ul>
+    </div>
+
+    <!-- HO-LING -->
+    <div id="kingdom-ho-ling" class="kingdom-panel">
+      <h2 class="kingdom-title">⚜️ Kerajaan Ho-Ling / Kaling</h2>
+      <div class="kingdom-meta">
+        <span class="meta-tag">📅 Abad 7-9 M</span>
+        <span class="meta-tag">📍 Jawa Tengah (diduga)</span>
+        <span class="meta-tag">🛕 Hindu</span>
+        <span class="meta-tag">👑 Disebut dalam kronik Cina</span>
+      </div>
+      <p class="info-text">Ho-ling (atau Kaling/Kalingga) adalah nama dalam catatan Cina untuk kerajaan di Jawa yang sering diasosiasikan dengan Kalingga. Beberapa sejarawan membedakannya dari Kalingga karena perbedaan kronologi. Kerajaan ini mengirim banyak misi diplomatik ke Dinasti Tang Cina.</p>
+      <div class="section-title">📜 Sumber</div>
+      <div class="artefak-grid">
+        <div class="artefak-item"><div class="artefak-icon">📖</div><div class="artefak-name">Kronik Dinasti Tang</div><div class="artefak-desc">Menyebut Ho-ling mengirim utusan ke Cina antara 640-818 M.</div></div>
+      </div>
+      <p class="info-text" style="margin-top:1rem;">Catatan Cina menyebutkan Ho-ling memiliki kekayaan alam berlimpah, sistem pemerintahan teratur, dan penduduknya hidup makmur. Raja-rajanya menjalin hubungan diplomatik aktif dengan Dinasti Tang.</p>
+    </div>
+
+  </div>
+  <div class="page-footer">✦ Sejarah Kerajaan Indonesia ✦</div>
+</div>
+
+<!-- ============================================================ -->
+<!--  PAGE: KERAJAAN ISLAM  -->
+<!-- ============================================================ -->
+<div id="page-islam" class="page">
+  <button class="back-btn" onclick="showPage('landing')">← Kembali</button>
+  <div class="page-header islamic">
+    <h1 class="page-header-title">☪️ Kerajaan-Kerajaan Islam</h1>
+    <p class="page-header-sub">Tegaknya kekuasaan Islam di Nusantara — dari Samudera Pasai hingga Kesultanan Banten dan Gowa-Tallo</p>
+  </div>
+  <div class="divider-gold"></div>
+
+  <div class="sub-nav">
+    <button class="sub-nav-btn active" onclick="showIslamKingdom('pasai', this)">Samudera Pasai</button>
+    <button class="sub-nav-btn" onclick="showIslamKingdom('malaka', this)">Malaka</button>
+    <button class="sub-nav-btn" onclick="showIslamKingdom('demak', this)">Demak</button>
+    <button class="sub-nav-btn" onclick="showIslamKingdom('aceh', this)">Aceh</button>
+    <button class="sub-nav-btn" onclick="showIslamKingdom('mataram-islam', this)">Mataram Islam</button>
+    <button class="sub-nav-btn" onclick="showIslamKingdom('banten', this)">Banten</button>
+    <button class="sub-nav-btn" onclick="showIslamKingdom('cirebon', this)">Cirebon</button>
+    <button class="sub-nav-btn" onclick="showIslamKingdom('gowa-tallo', this)">Gowa-Tallo</button>
+    <button class="sub-nav-btn" onclick="showIslamKingdom('ternate', this)">Ternate</button>
+    <button class="sub-nav-btn" onclick="showIslamKingdom('tidore', this)">Tidore</button>
+    <button class="sub-nav-btn" onclick="showIslamKingdom('banjar', this)">Banjar</button>
+    <button class="sub-nav-btn" onclick="showIslamKingdom('pajang', this)">Pajang</button>
+  </div>
+
+  <div class="content-area">
+
+    <!-- SAMUDERA PASAI -->
+    <div id="ikingdom-pasai" class="kingdom-panel active">
+      <h2 class="kingdom-title">☪️ Kesultanan Samudera Pasai</h2>
+      <div class="kingdom-meta">
+        <span class="meta-tag">📅 1267–1521 M</span>
+        <span class="meta-tag">📍 Aceh Utara, Sumatera</span>
+        <span class="meta-tag">☪️ Islam (Mazhab Syafi'i)</span>
+        <span class="meta-tag">👑 Kerajaan Islam Pertama di Indonesia</span>
+      </div>
+      <p class="info-text">Samudera Pasai adalah kerajaan Islam pertama di Indonesia, didirikan oleh Malik al-Saleh di pesisir utara Sumatera. Kerajaan ini menjadi pusat perdagangan dan penyebaran Islam di Asia Tenggara. Marco Polo (1292 M) dan Ibnu Battuta (1345 M) sempat mengunjungi dan mencatat keberadaan kerajaan ini.</p>
+
+      <div class="section-title">📜 Artefak & Peninggalan</div>
+      <div class="artefak-grid">
+        <div class="artefak-item"><div class="artefak-icon">🪦</div><div class="artefak-name">Batu Nisan Sultan Malik al-Saleh (1297 M)</div><div class="artefak-desc">Batu nisan dengan tulisan Arab, mirip batu nisan Gujarat India. Bukti utama berdirinya kerajaan Islam pertama.</div></div>
+        <div class="artefak-item"><div class="artefak-icon">🪙</div><div class="artefak-name">Koin Dirham Pasai</div><div class="artefak-desc">Mata uang emas bertuliskan Arab — bukti kemajuan ekonomi dan islamisasi Pasai.</div></div>
+        <div class="artefak-item"><div class="artefak-icon">📖</div><div class="artefak-name">Catatan Ibnu Battuta & Marco Polo</div><div class="artefak-desc">Penjelajah Muslim (Ibnu Battuta 1345 M) dan Eropa (Marco Polo 1292 M) mencatat kehidupan di Pasai.</div></div>
+      </div>
+
+      <div class="section-title">👤 Tokoh Penting</div>
+      <ul class="tokoh-list">
+        <li class="tokoh-item"><div class="tokoh-name">Sultan Malik al-Saleh (Merah Silu)</div><div class="tokoh-desc">Pendiri Samudera Pasai (1267–1297 M). Memeluk Islam setelah bertemu ulama dari Arab, berganti nama menjadi Malik al-Saleh. Menjadi sultan Islam pertama di Nusantara.</div></li>
+        <li class="tokoh-item"><div class="tokoh-name">Sultan Ahmad Malik az-Zahir</div><div class="tokoh-desc">Raja yang dikunjungi Ibnu Battuta (1345 M). Dikenal saleh dan berpengetahuan luas tentang hukum Islam.</div></li>
+        <li class="tokoh-item"><div class="tokoh-name">Sultan Zain al-Abidin</div><div class="tokoh-desc">Raja yang menjalin hubungan diplomatik dengan Cina (Dinasti Ming) pada awal abad 15 M.</div></li>
+      </ul>
+      <div class="info-grid">
+        <div class="info-card"><div class="info-card-label">Kehancuran</div><div class="info-card-value">1521 M — ditaklukkan Portugis</div></div>
+        <div class="info-card"><div class="info-card-label">Peran Utama</div><div class="info-card-value">Pusat perdagangan rempah dan penyebaran Islam ke Asia Tenggara</div></div>
+      </div>
+    </div>
+
+    <!-- MALAKA -->
+    <div id="ikingdom-malaka" class="kingdom-panel">
+      <h2 class="kingdom-title">☪️ Kesultanan Malaka</h2>
+      <div class="kingdom-meta">
+        <span class="meta-tag">📅 1400–1511 M</span>
+        <span class="meta-tag">📍 Semenanjung Melayu (Malaysia)</span>
+        <span class="meta-tag">☪️ Islam</span>
+        <span class="meta-tag">👑 Pusat Perdagangan & Islam Asia Tenggara</span>
+      </div>
+      <p class="info-text">Meski berlokasi di Semenanjung Melayu, Malaka sangat berpengaruh terhadap islamisasi Nusantara. Malaka menjadi pusat perdagangan terbesar di Asia Tenggara, dan para sultan serta pedagangnya berperan besar menyebarkan Islam ke seluruh Nusantara melalui jalur perdagangan.</p>
+      <div class="section-title">👤 Tokoh Penting</div>
+      <ul class="tokoh-list">
+        <li class="tokoh-item"><div class="tokoh-name">Parameswara (Sultan Iskandar Syah)</div><div class="tokoh-desc">Pendiri Malaka (~1400 M). Pangeran pelarian dari Sriwijaya/Palembang. Masuk Islam sekitar 1414 M, menjadi pintu gerbang islamisasi Malaka.</div></li>
+        <li class="tokoh-item"><div class="tokoh-name">Sultan Mudzafar Syah</div><div class="tokoh-desc">Sultan yang memperkuat Islam sebagai agama resmi dan menjadikan Malaka pusat penyebaran Islam.</div></li>
+        <li class="tokoh-item"><div class="tokoh-name">Tun Perak</div><div class="tokoh-desc">Bendahara (perdana menteri) terbesar Malaka, arsitek kejayaan Malaka abad 15 M.</div></li>
+      </ul>
+      <div class="info-grid">
+        <div class="info-card"><div class="info-card-label">Kehancuran</div><div class="info-card-value">1511 M — ditaklukkan Portugis di bawah Alfonso de Albuquerque</div></div>
+        <div class="info-card"><div class="info-card-label">Pengaruh</div><div class="info-card-value">Bahasa Melayu menjadi lingua franca, Islam menyebar ke seluruh Nusantara</div></div>
+      </div>
+    </div>
+
+    <!-- DEMAK -->
+    <div id="ikingdom-demak" class="kingdom-panel">
+      <h2 class="kingdom-title">☪️ Kesultanan Demak</h2>
+      <div class="kingdom-meta">
+        <span class="meta-tag">📅 1475–1554 M</span>
+        <span class="meta-tag">📍 Demak, Jawa Tengah</span>
+        <span class="meta-tag">☪️ Islam</span>
+        <span class="meta-tag">👑 Kerajaan Islam Pertama di Jawa</span>
+      </div>
+      <p class="info-text">Demak adalah kerajaan Islam pertama di Jawa, didirikan oleh Raden Patah (putra Raja Majapahit yang memeluk Islam). Demak berperan besar dalam mengakhiri era Majapahit, membantu Wali Songo menyebarkan Islam, dan menjadi pusat politik Islam di Jawa.</p>
+
+      <div class="section-title">📜 Artefak & Peninggalan</div>
+      <div class="artefak-grid">
+        <div class="artefak-item"><div class="artefak-icon">🕌</div><div class="artefak-name">Masjid Agung Demak</div><div class="artefak-desc">Masjid tertua di Jawa (didirikan ~1479 M). Tiang utama (soko tatal) dibuat dari pecahan kayu oleh Sunan Kalijaga. Simbol berdirinya Islam di Jawa.</div></div>
+        <div class="artefak-item"><div class="artefak-icon">🗡️</div><div class="artefak-name">Keris Kyai Ageng Plered</div><div class="artefak-desc">Keris pusaka kerajaan Demak yang menjadi lambang kekuasaan sultan.</div></div>
+        <div class="artefak-item"><div class="artefak-icon">📜</div><div class="artefak-name">Serat Darmagandul & Babad Demak</div><div class="artefak-desc">Naskah Jawa yang menceritakan berdirinya Demak dan peran Wali Songo.</div></div>
+      </div>
+
+      <div class="section-title">👤 Tokoh Penting</div>
+      <ul class="tokoh-list">
+        <li class="tokoh-item"><div class="tokoh-name">Raden Patah (Sultan Alam Akbar al-Fattah)</div><div class="tokoh-desc">Pendiri Demak (~1475–1518 M). Putra Raja Brawijaya V dari Majapahit. Memeluk Islam dan mendirikan Demak dengan dukungan Wali Songo. Memimpin serangan ke Malaka melawan Portugis (1513 M).</div></li>
+        <li class="tokoh-item"><div class="tokoh-name">Pati Unus (Pangeran Sabrang Lor)</div><div class="tokoh-desc">Sultan kedua (1518-1521 M). Terkenal karena dua kali memimpin armada menyerang Portugis di Malaka. Wafat dalam pertempuran, dikenang sebagai pahlawan.</div></li>
+        <li class="tokoh-item"><div class="tokoh-name">Sultan Trenggana</div><div class="tokoh-desc">Sultan terbesar Demak (1521-1546 M). Memperluas Demak hingga Jawa Barat (Sunda Kelapa) dan Jawa Timur. Menyebarkan Islam ke berbagai penjuru Jawa.</div></li>
+        <li class="tokoh-item"><div class="tokoh-name">Wali Songo</div><div class="tokoh-desc">Sembilan wali yang menjadi penasehat dan penyebar Islam di era Demak. Sunan Ampel, Sunan Bonang, Sunan Kalijaga, Sunan Giri, dll — menjadikan Demak pusat dakwah Islam Jawa.</div></li>
+      </ul>
+    </div>
+
+    <!-- ACEH -->
+    <div id="ikingdom-aceh" class="kingdom-panel">
+      <h2 class="kingdom-title">☪️ Kesultanan Aceh Darussalam</h2>
+      <div class="kingdom-meta">
+        <span class="meta-tag">📅 1496–1903 M</span>
+        <span class="meta-tag">📍 Aceh, Sumatera</span>
+        <span class="meta-tag">☪️ Islam</span>
+        <span class="meta-tag">👑 Serambi Mekkah</span>
+      </div>
+      <p class="info-text">Aceh Darussalam adalah kerajaan Islam terkuat di Sumatera dan salah satu yang terbesar di Asia Tenggara. Dijuluki "Serambi Mekkah," Aceh menjadi benteng Islam terdepan melawan kolonialisme Portugis dan Belanda, serta pusat ilmu keislaman yang disegani.</p>
+
+      <div class="section-title">📜 Artefak & Peninggalan</div>
+      <div class="artefak-grid">
+        <div class="artefak-item"><div class="artefak-icon">🕌</div><div class="artefak-name">Masjid Raya Baiturrahman</div><div class="artefak-desc">Masjid kebanggaan Aceh, dibangun Sultan Iskandar Muda. Simbol kejayaan Islam di Aceh.</div></div>
+        <div class="artefak-item"><div class="artefak-icon">⚓</div><div class="artefak-name">Meriam Kesultanan</div><div class="artefak-desc">Berbagai meriam besar peninggalan Aceh, menunjukkan kekuatan militer Aceh.</div></div>
+        <div class="artefak-item"><div class="artefak-icon">📜</div><div class="artefak-name">Bustanus Salatin</div><div class="artefak-desc">Karya Syekh Nuruddin ar-Raniri — ensiklopedia Islam pertama di Nusantara, ditulis masa Iskandar Tsani.</div></div>
+        <div class="artefak-item"><div class="artefak-icon">📜</div><div class="artefak-name">Adat Makuta Alam</div><div class="artefak-desc">Undang-undang kerajaan Aceh yang mengatur pemerintahan berdasarkan hukum Islam.</div></div>
+      </div>
+
+      <div class="section-title">👤 Tokoh Penting</div>
+      <ul class="tokoh-list">
+        <li class="tokoh-item"><div class="tokoh-name">Sultan Ali Mughayat Syah</div><div class="tokoh-desc">Pendiri Aceh Darussalam (1496–1530 M). Menyatukan kerajaan-kerajaan kecil di Aceh dan mengusir Portugis dari Deli (1523 M).</div></li>
+        <li class="tokoh-item"><div class="tokoh-name">Sultan Iskandar Muda</div><div class="tokoh-desc">Sultan terbesar Aceh (1607–1636 M). Membawa Aceh ke puncak kejayaan: menguasai seluruh Sumatera dan sebagian Semenanjung Melayu, menyerang Portugis di Malaka, membangun armada laut terkuat. Pembangun Masjid Raya Baiturrahman.</div></li>
+        <li class="tokoh-item"><div class="tokoh-name">Sultanah Safiatuddin</div><div class="tokoh-desc">Sultana (ratu) pertama Aceh (1641-1675 M). Penerus Iskandar Tsani. Masa pemerintahannya menandai era kepemimpinan perempuan yang berlangsung selama 59 tahun di Aceh.</div></li>
+        <li class="tokoh-item"><div class="tokoh-name">Hamzah Fansuri & Syekh Nuruddin ar-Raniri</div><div class="tokoh-desc">Ulama-ulama besar Aceh yang menjadikan Aceh pusat keilmuan Islam Nusantara.</div></li>
+      </ul>
+    </div>
+
+    <!-- MATARAM ISLAM -->
+    <div id="ikingdom-mataram-islam" class="kingdom-panel">
+      <h2 class="kingdom-title">☪️ Kesultanan Mataram Islam</h2>
+      <div class="kingdom-meta">
+        <span class="meta-tag">📅 1582–1755 M</span>
+        <span class="meta-tag">📍 Jawa Tengah (Kotagede/Karta/Plered)</span>
+        <span class="meta-tag">☪️ Islam (bercampur Jawa)</span>
+        <span class="meta-tag">👑 Kerajaan Islam Terbesar di Jawa</span>
+      </div>
+      <p class="info-text">Mataram Islam adalah kerajaan Islam terbesar di Jawa yang mewarisi tradisi Mataram Kuno namun beragama Islam. Puncak kejayaannya di bawah Sultan Agung yang menguasai hampir seluruh Jawa dan melakukan dua kali serangan besar ke Batavia (Belanda).</p>
+
+      <div class="section-title">📜 Artefak & Peninggalan</div>
+      <div class="artefak-grid">
+        <div class="artefak-item"><div class="artefak-icon">🏯</div><div class="artefak-name">Keraton Kotagede</div><div class="artefak-desc">Ibu kota pertama Mataram Islam, kini menjadi situs bersejarah di Yogyakarta.</div></div>
+        <div class="artefak-item"><div class="artefak-icon">📜</div><div class="artefak-name">Serat Babad Tanah Jawi</div><div class="artefak-desc">Kronik Jawa yang menceritakan sejarah Mataram Islam dari awal hingga akhir.</div></div>
+        <div class="artefak-item"><div class="artefak-icon">🎭</div><div class="artefak-name">Kalender Jawa-Islam</div><div class="artefak-desc">Sultan Agung menciptakan kalender Jawa yang memadukan sistem Saka Hindu dengan kalender Hijriah Islam.</div></div>
+        <div class="artefak-item"><div class="artefak-icon">🪦</div><div class="artefak-name">Makam Imogiri</div><div class="artefak-desc">Kompleks makam raja-raja Mataram Islam di Bantul, dibangun Sultan Agung untuk dirinya dan penerusnya.</div></div>
+      </div>
+
+      <div class="section-title">👤 Tokoh Penting</div>
+      <ul class="tokoh-list">
+        <li class="tokoh-item"><div class="tokoh-name">Ki Ageng Pemanahan</div><div class="tokoh-desc">Pendiri garis keturunan Mataram Islam, ayah Sutawijaya. Mendapat tanah Mataram sebagai hadiah dari Sultan Pajang.</div></li>
+        <li class="tokoh-item"><div class="tokoh-name">Sutawijaya (Panembahan Senopati)</div><div class="tokoh-desc">Pendiri resmi Mataram Islam (~1582 M). Melepaskan diri dari Pajang dan mendirikan kerajaan mandiri di Mataram. Memperluas wilayah ke Jawa Timur.</div></li>
+        <li class="tokoh-item"><div class="tokoh-name">Sultan Agung (Anyakrakusuma)</div><div class="tokoh-desc">Sultan terbesar Mataram (1613-1645 M). Menguasai hampir seluruh Jawa dan Madura. Dua kali menyerang Batavia (1628 & 1629 M). Menciptakan Kalender Jawa-Islam. Mendapat gelar "Sultan" dari Mekah.</div></li>
+        <li class="tokoh-item"><div class="tokoh-name">Amangkurat I & II</div><div class="tokoh-desc">Penerus Sultan Agung yang mulai berkompromi dengan Belanda (VOC), menandai awal kemunduran Mataram.</div></li>
+      </ul>
+      <div class="info-grid">
+        <div class="info-card"><div class="info-card-label">Perpecahan</div><div class="info-card-value">1755 M — Perjanjian Giyanti membagi Mataram menjadi Yogyakarta dan Surakarta</div></div>
+        <div class="info-card"><div class="info-card-label">Warisan</div><div class="info-card-value">Keraton Yogyakarta dan Surakarta, budaya Jawa Islam, Kalender Jawa</div></div>
+      </div>
+    </div>
+
+    <!-- BANTEN -->
+    <div id="ikingdom-banten" class="kingdom-panel">
+      <h2 class="kingdom-title">☪️ Kesultanan Banten</h2>
+      <div class="kingdom-meta">
+        <span class="meta-tag">📅 1526–1813 M</span>
+        <span class="meta-tag">📍 Banten, Jawa Barat</span>
+        <span class="meta-tag">☪️ Islam</span>
+        <span class="meta-tag">👑 Pelabuhan Lada Terbesar Asia</span>
+      </div>
+      <p class="info-text">Banten adalah kesultanan Islam yang kaya raya berkat monopoli perdagangan lada. Menjadi salah satu pelabuhan tersibuk di Asia dan dikenal berani menentang VOC Belanda. Banten memiliki hubungan dagang dengan Inggris, Cina, dan Arab.</p>
+      <div class="section-title">📜 Artefak</div>
+      <div class="artefak-grid">
+        <div class="artefak-item"><div class="artefak-icon">🕌</div><div class="artefak-name">Masjid Agung Banten</div><div class="artefak-desc">Dibangun masa Maulana Hasanuddin. Menara bergaya Eropa dan atap Jawa — simbol akulturasi budaya.</div></div>
+        <div class="artefak-item"><div class="artefak-icon">🏯</div><div class="artefak-name">Keraton Surosowan</div><div class="artefak-desc">Reruntuhan istana kerajaan Banten di Banten Lama — kini situs arkeologi penting.</div></div>
+      </div>
+      <div class="section-title">👤 Tokoh Penting</div>
+      <ul class="tokoh-list">
+        <li class="tokoh-item"><div class="tokoh-name">Maulana Hasanuddin</div><div class="tokoh-desc">Pendiri Banten (1526–1570 M). Putra Sunan Gunung Jati. Mengislamkan Banten dan menjadikannya pusat perdagangan.</div></li>
+        <li class="tokoh-item"><div class="tokoh-name">Sultan Ageng Tirtayasa</div><div class="tokoh-desc">Sultan terbesar Banten (1651-1683 M). Gigih menentang monopoli VOC Belanda. Dikhianati putranya sendiri (Sultan Haji) yang bekerjasama dengan VOC.</div></li>
+      </ul>
+    </div>
+
+    <!-- CIREBON -->
+    <div id="ikingdom-cirebon" class="kingdom-panel">
+      <h2 class="kingdom-title">☪️ Kesultanan Cirebon</h2>
+      <div class="kingdom-meta">
+        <span class="meta-tag">📅 1445–1677 M</span>
+        <span class="meta-tag">📍 Cirebon, Jawa Barat</span>
+        <span class="meta-tag">☪️ Islam</span>
+        <span class="meta-tag">👑 Jembatan Islam Jawa-Sunda</span>
+      </div>
+      <p class="info-text">Cirebon adalah kesultanan Islam yang berdiri di perbatasan Jawa dan Sunda, menjadi jembatan budaya antara dua tradisi besar tersebut. Didirikan dan dikembangkan oleh Sunan Gunung Jati, salah satu Wali Songo.</p>
+      <div class="section-title">📜 Artefak</div>
+      <div class="artefak-grid">
+        <div class="artefak-item"><div class="artefak-icon">🏯</div><div class="artefak-name">Keraton Kasepuhan</div><div class="artefak-desc">Keraton tertua Cirebon dengan koleksi benda pusaka dan motif batik Mega Mendung yang ikonik.</div></div>
+        <div class="artefak-item"><div class="artefak-icon">🎨</div><div class="artefak-name">Batik Mega Mendung</div><div class="artefak-desc">Motif batik khas Cirebon dengan pengaruh Cina-Islam, warisan budaya tak benda.</div></div>
+      </div>
+      <div class="section-title">👤 Tokoh Penting</div>
+      <ul class="tokoh-list">
+        <li class="tokoh-item"><div class="tokoh-name">Sunan Gunung Jati (Syarif Hidayatullah)</div><div class="tokoh-desc">Pendiri dan penguasa Cirebon. Salah satu Wali Songo. Berhasil mengislamkan Cirebon, Banten, dan sebagian Jawa Barat. Berdarah campuran Arab-Mesir-Jawa.</div></li>
+      </ul>
+    </div>
+
+    <!-- GOWA-TALLO -->
+    <div id="ikingdom-gowa-tallo" class="kingdom-panel">
+      <h2 class="kingdom-title">☪️ Kerajaan Gowa-Tallo</h2>
+      <div class="kingdom-meta">
+        <span class="meta-tag">📅 1605–1905 M (Islam: sejak 1605)</span>
+        <span class="meta-tag">📍 Sulawesi Selatan (Makassar)</span>
+        <span class="meta-tag">☪️ Islam (sejak 1605 M)</span>
+        <span class="meta-tag">👑 Kerajaan Islam Terkuat di Sulawesi</span>
+      </div>
+      <p class="info-text">Gowa-Tallo adalah persekutuan dua kerajaan di Sulawesi Selatan yang menjadi salah satu kerajaan terkuat di Indonesia Timur. Memeluk Islam pada 1605 M setelah dakwah Dato ri Bandang. Sultan Hasanuddin menjadi pahlawan nasional karena perlawanannya yang gigih terhadap VOC Belanda.</p>
+
+      <div class="section-title">📜 Artefak</div>
+      <div class="artefak-grid">
+        <div class="artefak-item"><div class="artefak-icon">🏯</div><div class="artefak-name">Benteng Somba Opu</div><div class="artefak-desc">Benteng dan ibu kota Gowa yang kuat. Menjadi pusat perdagangan dan pertahanan terakhir melawan VOC.</div></div>
+        <div class="artefak-item"><div class="artefak-icon">📜</div><div class="artefak-name">Lontara Bugis-Makassar</div><div class="artefak-desc">Naskah sejarah dalam aksara Lontara yang mencatat sejarah Gowa dan permasalahan kerajaan.</div></div>
+        <div class="artefak-item"><div class="artefak-icon">🗡️</div><div class="artefak-name">Badik (Keris Makassar)</div><div class="artefak-desc">Senjata pusaka khas Gowa-Tallo yang menjadi simbol keberanian dan kehormatan.</div></div>
+      </div>
+
+      <div class="section-title">👤 Tokoh Penting</div>
+      <ul class="tokoh-list">
+        <li class="tokoh-item"><div class="tokoh-name">Karaeng Matoaya (Raja Tallo I Mallingkaang Daeng Manyonri)</div><div class="tokoh-desc">Raja Tallo yang pertama memeluk Islam (9 Jumadil Awal 1014 H / 1605 M). Menjadi pelopor islamisasi Sulawesi Selatan.</div></li>
+        <li class="tokoh-item"><div class="tokoh-name">Sultan Alauddin</div><div class="tokoh-desc">Raja Gowa yang memeluk Islam pertama kali (1605 M) dan menjadikan Islam agama resmi kerajaan. Mengislamkan kerajaan-kerajaan tetangga.</div></li>
+        <li class="tokoh-item"><div class="tokoh-name">Sultan Hasanuddin (Ayam Jantan dari Timur)</div><div class="tokoh-desc">Sultan terbesar Gowa (1653-1669 M). Dijuluki "Ayam Jantan dari Timur" karena keberaniannya. Melawan VOC dengan gigih hingga akhirnya dipaksa menandatangani Perjanjian Bongaya (1667 M) yang merugikan.</div></li>
+      </ul>
+    </div>
+
+    <!-- TERNATE -->
+    <div id="ikingdom-ternate" class="kingdom-panel">
+      <h2 class="kingdom-title">☪️ Kesultanan Ternate</h2>
+      <div class="kingdom-meta">
+        <span class="meta-tag">📅 1257–sekarang (Islam: abad 14-15 M)</span>
+        <span class="meta-tag">📍 Maluku Utara (Pulau Ternate)</span>
+        <span class="meta-tag">☪️ Islam</span>
+        <span class="meta-tag">👑 Kerajaan Cengkih Terbesar</span>
+      </div>
+      <p class="info-text">Ternate adalah kesultanan penghasil cengkih terbesar di dunia yang letaknya sangat strategis di jalur rempah. Kesultanan ini memeluk Islam pada abad 14-15 M dan menjadi kekuatan dominan di Maluku. Pernah menguasai wilayah luas hingga Papua dan Filipina.</p>
+
+      <div class="section-title">📜 Artefak</div>
+      <div class="artefak-grid">
+        <div class="artefak-item"><div class="artefak-icon">🏯</div><div class="artefak-name">Benteng Tolukko & Kastela</div><div class="artefak-desc">Benteng-benteng bersejarah di Ternate yang dibangun Portugis dan dikuasai Ternate.</div></div>
+        <div class="artefak-item"><div class="artefak-icon">👑</div><div class="artefak-name">Mahkota & Regalia Ternate</div><div class="artefak-desc">Benda pusaka kerajaan termasuk mahkota, tombak, dan pakaian adat sultan yang masih dijaga.</div></div>
+      </div>
+
+      <div class="section-title">👤 Tokoh Penting</div>
+      <ul class="tokoh-list">
+        <li class="tokoh-item"><div class="tokoh-name">Sultan Baab Ullah</div><div class="tokoh-desc">Sultan terbesar Ternate (1570-1583 M). Berhasil mengusir Portugis dari Ternate setelah bertahun-tahun berjuang. Memperluas wilayah Ternate hingga ke Filipina dan Papua.</div></li>
+        <li class="tokoh-item"><div class="tokoh-name">Sultan Said Barakati</div><div class="tokoh-desc">Sultan yang pertama memeluk Islam di Ternate (abad 14 M), menjadikan Islam agama kerajaan.</div></li>
+        <li class="tokoh-item"><div class="tokoh-name">Sultan Hairun</div><div class="tokoh-desc">Sultan yang menentang Portugis dan dibunuh secara licik oleh Portugis (1570 M), memicu perang besar yang kemudian dimenangkan Sultan Baab Ullah.</div></li>
+      </ul>
+    </div>
+
+    <!-- TIDORE -->
+    <div id="ikingdom-tidore" class="kingdom-panel">
+      <h2 class="kingdom-title">☪️ Kesultanan Tidore</h2>
+      <div class="kingdom-meta">
+        <span class="meta-tag">📅 1081 M–sekarang (Islam: abad 15 M)</span>
+        <span class="meta-tag">📍 Maluku Utara (Pulau Tidore)</span>
+        <span class="meta-tag">☪️ Islam</span>
+        <span class="meta-tag">👑 Rival Abadi Ternate</span>
+      </div>
+      <p class="info-text">Tidore adalah kesultanan Maluku yang senantiasa bersaing dengan Ternate dalam dominasi perdagangan cengkih dan pala. Tidore pernah bersekutu dengan Spanyol melawan Ternate-Portugis, dan pada puncaknya menguasai wilayah Papua Barat dan kepulauan sekitarnya.</p>
+      <div class="section-title">👤 Tokoh Penting</div>
+      <ul class="tokoh-list">
+        <li class="tokoh-item"><div class="tokoh-name">Sultan Nuku (Muhammad Amiruddin)</div><div class="tokoh-desc">Sultan terbesar Tidore (1780-1805 M). Memimpin perlawanan gigih melawan VOC Belanda, berhasil merebut kembali wilayah yang dikuasai Belanda. Pahlawan nasional Indonesia.</div></li>
+        <li class="tokoh-item"><div class="tokoh-name">Sultan Ciriliyati</div><div class="tokoh-desc">Sultan Tidore yang pertama memeluk Islam pada abad 15 M.</div></li>
+      </ul>
+    </div>
+
+    <!-- BANJAR -->
+    <div id="ikingdom-banjar" class="kingdom-panel">
+      <h2 class="kingdom-title">☪️ Kesultanan Banjar</h2>
+      <div class="kingdom-meta">
+        <span class="meta-tag">📅 1520–1905 M</span>
+        <span class="meta-tag">📍 Kalimantan Selatan (Banjarmasin)</span>
+        <span class="meta-tag">☪️ Islam</span>
+        <span class="meta-tag">👑 Kerajaan Islam Terbesar di Kalimantan</span>
+      </div>
+      <p class="info-text">Kesultanan Banjar adalah kerajaan Islam terbesar di Kalimantan. Didirikan setelah Pangeran Samudera meminta bantuan Demak untuk mengalahkan pamannya, dengan syarat harus masuk Islam. Banjar kemudian menjadi pusat perdagangan dan islamisasi Kalimantan.</p>
+      <div class="section-title">👤 Tokoh Penting</div>
+      <ul class="tokoh-list">
+        <li class="tokoh-item"><div class="tokoh-name">Sultan Suryanullah (Pangeran Samudera)</div><div class="tokoh-desc">Pendiri Kesultanan Banjar (~1520 M). Masuk Islam dengan bantuan Demak dan mendirikan kerajaan Islam pertama di Kalimantan.</div></li>
+        <li class="tokoh-item"><div class="tokoh-name">Pangeran Antasari</div><div class="tokoh-desc">Pahlawan nasional yang memimpin Perang Banjar (1859-1905 M) melawan Belanda. Simbol perlawanan Islam Kalimantan.</div></li>
+      </ul>
+    </div>
+
+    <!-- PAJANG -->
+    <div id="ikingdom-pajang" class="kingdom-panel">
+      <h2 class="kingdom-title">☪️ Kesultanan Pajang</h2>
+      <div class="kingdom-meta">
+        <span class="meta-tag">📅 1546–1586 M</span>
+        <span class="meta-tag">📍 Kartasura (dekat Solo), Jawa Tengah</span>
+        <span class="meta-tag">☪️ Islam</span>
+        <span class="meta-tag">👑 Penerus Demak, Pendahulu Mataram</span>
+      </div>
+      <p class="info-text">Pajang adalah kerajaan Islam di Jawa yang menjadi jembatan antara Demak dan Mataram Islam. Didirikan setelah runtuhnya Demak akibat konflik internal. Pajang meneruskan tradisi Islam Jawa dan menjadi cikal bakal Mataram Islam.</p>
+      <div class="section-title">👤 Tokoh Penting</div>
+      <ul class="tokoh-list">
+        <li class="tokoh-item"><div class="tokoh-name">Jaka Tingkir (Sultan Hadiwijaya)</div><div class="tokoh-desc">Pendiri Pajang (1546–1582 M). Menantu Sultan Trenggana dari Demak. Memindahkan pusat kekuasaan dari Demak ke Pajang setelah kemelut internal Demak.</div></li>
+        <li class="tokoh-item"><div class="tokoh-name">Arya Pangiri</div><div class="tokoh-desc">Sultan terakhir Pajang yang dikalahkan Sutawijaya (Panembahan Senopati) dari Mataram, menandai berakhirnya Pajang.</div></li>
+      </ul>
+    </div>
+
+  </div>
+  <div class="page-footer">✦ Sejarah Kerajaan Indonesia ✦</div>
+</div>
+
+<!-- ============================================================ -->
+<!--  JAVASCRIPT  -->
+<!-- ============================================================ -->
+<script>
+  function showPage(id) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function showKingdom(id, btn) {
+    // hide all kingdom panels
+    document.querySelectorAll('#page-hindu-buddha .kingdom-panel').forEach(p => p.classList.remove('active'));
+    document.getElementById('kingdom-' + id).classList.add('active');
+    // update buttons
+    document.querySelectorAll('#page-hindu-buddha .sub-nav-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function showIslamKingdom(id, btn) {
+    document.querySelectorAll('#page-islam .kingdom-panel').forEach(p => p.classList.remove('active'));
+    document.getElementById('ikingdom-' + id).classList.add('active');
+    document.querySelectorAll('#page-islam .sub-nav-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+
+</body>
+</html>
